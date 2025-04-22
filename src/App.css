@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-body: "Lora", serif;
+  --font-headings: "Calistoga", serif;
+
+  --color-main-bg: #F8F9FA;
+  --color-custom-green: #2ECC71;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
