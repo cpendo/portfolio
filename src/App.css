@@ -5,8 +5,8 @@
   --font-body: "Lora", serif;
   --font-headings: "Calistoga", serif;
 
-  --color-main-bg: #F8F9FA;
-  --color-custom-green: #2ECC71;
+  --color-main-bg: #f8f9fa;
+  --color-custom-green: #2ecc71;
 }
 
 body {
@@ -14,4 +14,17 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("/custom-cursor.png"), auto;
+}
+
+nav {
+  @apply fixed top-0 z-50 w-full h-12 flex flex-row justify-between items-center transition-colors duration-500;
+}
+
+.nav-scrolled {
+  @apply bg-custom-green  px-4;
+}
+
+.nav-default {
+  @apply bg-transparent px-8;
 }
