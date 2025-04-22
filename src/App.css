@@ -6,7 +6,11 @@
   --font-headings: "Calistoga", serif;
 
   --color-main-bg: #f8f9fa;
-  --color-custom-green: #2ecc71;
+  /* --color-custom-green: #2ecc71; */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -18,13 +22,14 @@ body {
 }
 
 nav {
-  @apply fixed top-0 z-50 w-full h-12 flex flex-row justify-between items-center transition-colors duration-500;
+  @apply w-full fixed top-0 z-50 h-12 flex flex-row justify-between items-center transition-colors duration-500;
 }
 
 .nav-scrolled {
-  @apply bg-custom-green  px-4;
+  @apply bg-green-500  px-4;
 }
 
 .nav-default {
   @apply bg-transparent px-8;
 }
+
