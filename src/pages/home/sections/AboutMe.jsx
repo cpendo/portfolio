@@ -1,10 +1,10 @@
-import AvatarImage from "../../../assets/img.png";
+import AvatarImage from "../../../assets/avatar.png";
 
 const AboutMe = () => {
   return (
     <div className="w-full h-screen px-6 pt-8">
       <div className="flex flex-row justify-between items-start">
-        <div className="flex flex-2 flex-col gap-6">
+        <div className="flex flex-2 flex-col gap-8">
           <h3 className="font-headings uppercase text-green-500 text-6xl">
             About Me
           </h3>
