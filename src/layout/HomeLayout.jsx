@@ -6,7 +6,9 @@ const HomeLayout = () => {
   return (
     <div className="w-full bg-white">
       <Navbar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

@@ -20,7 +20,7 @@ const Navbar = () => {
       <ul className="text-lg">
         <li>
           <a
-            href={`mailto:info@example.com?subject=${encodeURIComponent(
+            href={`mailto:devcynthia327@gmail.com?subject=${encodeURIComponent(
               "Hi Cynthia 👋"
             )}`}
           >

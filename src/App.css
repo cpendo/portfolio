@@ -9,7 +9,9 @@
   /* --color-custom-green: #2ecc71; */
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -18,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: url("/custom-cursor.png"), auto;
+  /* cursor: url("/custom-cursor.png"), auto; */
 }
 
 nav {
