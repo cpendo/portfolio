@@ -3,7 +3,7 @@ import { IoArrowDownOutline } from "react-icons/io5";
 const Hero = () => {
   return (
     <section className="w-full h-screen flex" id="home">
-      <div className="w-full h-full mt-5 sm:mt-12 flex flex-col justify-center items-center gap-8 sm:gap-10 text-center">
+      <div className="w-full h-full mt-12 px-4 sm:px-6 flex flex-col justify-center items-center gap-8 sm:gap-10 text-center">
         <h1 className="w-full lg:max-w-6xl font-headings leading-15 md:leading-20 lg:leading-28 text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
           I want to{" "}
           <span className="font-body font-medium italic text-green-500">
