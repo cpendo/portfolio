@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-body: "Lora", serif;
   --font-headings: "Calistoga", serif;
@@ -9,6 +11,8 @@
 
   --animate-custom-bounce: bounce 1s ease-in-out infinite;
   --animate-wiggle: wiggle 0.3s ease-in-out 10;
+  --animate-blast-pulse: blast-pulse 6s ease-in-out infinite;
+  --animate-blast-pulse-alt: blast-pulse-alt 8s ease-in-out infinite;
 
   /* Keyframes for the wiggle animation */
   @keyframes wiggle {
@@ -21,6 +25,32 @@
     }
     75% {
       transform: rotate(-5deg);
+    }
+  }
+
+  /* Muted PixelBlast: pulsing green spotlight that lights up dots */
+  @keyframes blast-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+  }
+
+  /* Offset twin spotlight for movement feel */
+  @keyframes blast-pulse-alt {
+    0%,
+    100% {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+    50% {
+      opacity: 0.25;
+      transform: scale(0.95);
     }
   }
 }
@@ -40,15 +70,25 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #ffffff;
+  color: #000000;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
   /* cursor: url("/custom-cursor.png"), auto; */
 }
 
+html.dark body {
+  background-color: #09090b; /* zinc-950 */
+  color: #f4f4f5; /* zinc-100 */
+}
+
 nav {
-  @apply w-full max-w-full fixed top-0 z-50 h-12 flex flex-row justify-between items-center sm:px-8 px-4;
+  @apply w-full max-w-full fixed top-0 z-50 h-14 sm:h-18 flex flex-row justify-between items-center sm:px-8 px-4;
 }
 
 .nav-scrolled {
-  @apply bg-white/90 backdrop-blur-sm;
+  @apply bg-white/70 backdrop-blur-sm dark:bg-zinc-950/85;
 }
 
 .nav-default {
@@ -64,6 +104,14 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate-text-background 3s infinite alternate linear;
+}
+
+/* Dark mode: disable masked image (dark image on dark bg = invisible) */
+html.dark .masked-text {
+  background-image: none;
+  color: #f4f4f5; /* zinc-100 */
+  -webkit-text-fill-color: #f4f4f5;
+  animation: none;
 }
 
 @keyframes animate-text-background {

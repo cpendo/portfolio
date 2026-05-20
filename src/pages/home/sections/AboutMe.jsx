@@ -2,14 +2,14 @@ import AvatarImage from "../../../assets/avatar.png";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="w-full py-16 px-6 sm:px-12">
+    <section id="about" className="w-full py-16 px-6 sm:px-12 bg-white dark:bg-zinc-950 text-black dark:text-zinc-100">
       <div className="max-w-6xl mx-auto flex flex-col gap-5">
         {/* Heading */}
         <div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold capitalize leading-tight">
             About <span className="font-light italic">Me</span>
           </h2>
-          <div className="w-16 h-px bg-green-500 mt-2" />
+          <div className="w-16 h-px bg-green-500 dark:bg-green-400 mt-2" />
         </div>
 
         {/* Content */}
@@ -17,14 +17,14 @@ const AboutMe = () => {
           {/* Image */}
           <div className="flex-shrink-0 flex justify-center">
             <img
-              src={AvatarImage} 
-              alt="Avatar image"
+              src={AvatarImage}
+              alt="Illustrated avatar of Cynthia Pendo"
               className="w-60 sm:w-72 md:w-80  h-auto object-cover rounded-2xl"
             />
           </div>
 
           {/* Text */}
-          <div className="flex flex-col gap-6 text-base sm:text-xl leading-relaxed max-w-2xl">
+          <div className="flex flex-col gap-6 text-base sm:text-xl leading-relaxed max-w-2xl text-zinc-800 dark:text-zinc-300">
             <p>
               I'm a software developer based in Kenya who builds apps for fun,
               function, and when I'm lucky, both.
