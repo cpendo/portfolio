@@ -10,7 +10,7 @@ const projects = [
       "This app fetches real-time cryptocurrency data and presents it in a clean, responsive UI. Built with React and deployed on Vercel, it helped me practice integrating APIs and managing state.",
     image: CryptoWorldImage,
     tags: ["React", "RTK Query", "API Integration", "Responsive"],
-    liveUrl: "https://crypto-world-two.vercel.app/",
+    liveUrl: "https://cryptoworld-project.vercel.app/",
     codeUrl: "https://github.com/cpendo/cryptoWorld",
   },
   {
@@ -18,8 +18,8 @@ const projects = [
     description:
       "A personal workout tracker that helps users stay consistent with their fitness goals. Browse categorized workouts with embedded YouTube demos, log sets and reps, and manage profile data — backed by secure authentication, email verification, and a password reset flow.",
     image: HomeFitImage,
-    tags: ["React", "Redux Toolkit", "Node.js", "Express", "MySQL", "Passport.js"],
-    liveUrl: null,
+    tags: ["React", "Redux Toolkit", "Node.js", "Express", "SQLite", "Passport.js"],
+    liveUrl: "https://homefit-project.vercel.app/",
     codeUrl: "https://github.com/cpendo/HomeFit",
   },
 ];
