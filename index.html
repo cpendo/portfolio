@@ -21,13 +21,11 @@
 
   <title>CYNTHIA PENDO</title>
 
-  <!-- Prevent flash of unstyled theme: set .dark class before paint -->
+  <!-- Prevent flash of unstyled theme: light by default, dark only if explicitly chosen -->
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (stored === "dark" || (!stored && prefersDark)) {
+        if (localStorage.getItem("theme") === "dark") {
           document.documentElement.classList.add("dark");
         }
       } catch (e) { /* localStorage unavailable */ }
