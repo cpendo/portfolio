@@ -61,7 +61,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <a
+        {/* <a
           href="/Cynthia_Pendo_CV.pdf"
           download
           aria-label="Download Cynthia Pendo's CV (PDF)"
@@ -69,7 +69,7 @@ const Navbar = () => {
         >
           <FiDownload className="text-sm" />
           <span>Resume</span>
-        </a>
+        </a> */}
 
         <ThemeToggle />
 
