@@ -2,7 +2,10 @@ import AvatarImage from "../../../assets/avatar.png";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="w-full py-16 px-6 sm:px-12 bg-white dark:bg-zinc-950 text-black dark:text-zinc-100">
+    <section
+      id="about"
+      className="w-full py-16 px-6 sm:px-12 bg-white dark:bg-zinc-950 text-black dark:text-zinc-100"
+    >
       <div className="max-w-6xl mx-auto flex flex-col gap-5">
         {/* Heading */}
         <div>
@@ -31,10 +34,15 @@ const AboutMe = () => {
             </p>
 
             <p>
-              Sometimes it feels like a free-fall. One moment I know exactly
-              what I’m doing, the next I’m staring at a bug that makes me
-              question my life choices. But I love that. I love the challenge. I
-              love the satisfaction of getting something just right.
+              Systems fascinate me. I’ve always been the type to look at systems
+              and want to reverse-engineer them just to see how the pieces
+              connect. I bring that same energy to development; I want to know
+              how and why things work under the hood. It's a thrill for me to
+              figure out the why behind the code, connect the dots between
+              complex data logic and the final user experience. Whether I'm
+              mapping out a tough architectural problem or obsessing over a
+              perfectly smooth UI transition, my favorite part of the job is
+              building a solid, working solution from scratch
             </p>
 
             <p>
