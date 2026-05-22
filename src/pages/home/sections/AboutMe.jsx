@@ -37,10 +37,9 @@ const AboutMe = () => {
               Systems fascinate me. I want to know how and why things work under
               the hood. It's a thrill for me to figure out the why behind the
               code, connect the dots between complex data logic and the final
-              user experience. Whether I'm mapping out a tough architectural
-              problem or obsessing over a perfectly smooth UI transition, my
-              favorite part of the job is building a solid, working solution
-              from scratch
+              user experience. My favorite part of the job is building a solid,
+              working solution from scratch by mapping out a tough architectural
+              problems and obsessing over an intuitive UI.
             </p>
 
             <p>
