@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IoArrowDownOutline } from "react-icons/io5";
 
-const PHRASES = ["build platforms", "ship features", "design products"];
+const PHRASES = ["build platforms", "design products"];
 const ROTATION_MS = 2500;
 
 const Hero = () => {
