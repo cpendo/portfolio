@@ -40,7 +40,7 @@ const AboutMe = () => {
               code, connect the dots between complex data logic and the final
               user experience. */}{" "}
               My favorite part of the job is building a solid, working solution
-              from scratch by mapping out a tough architectural problems and
+              from scratch by mapping out a tough architectural problem and
               obsessing over an intuitive UI.
             </p>
 
