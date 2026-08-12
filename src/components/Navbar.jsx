@@ -8,6 +8,15 @@ import ThemeToggle from "./ThemeToggle";
 const FOCUS_RING =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950 rounded-sm";
 
+// Explicit href per item: "Case Studies" can't derive its anchor from the label
+// (a naive lowercase gives "#case studies" with a space).
+const NAV_ITEMS = [
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Contact", href: "#contact" },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,14 +57,14 @@ const Navbar = () => {
       </h1>
 
       <div className="flex items-center gap-6 sm:gap-10">
-        <ul className="hidden sm:flex flex-row gap-10 capitalize text-lg">
-          {["About", "Projects", "Contact"].map((item) => (
-            <li key={item}>
+        <ul className="hidden sm:flex flex-row gap-8 lg:gap-10 capitalize text-lg">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.label}>
               <a
-                href={`#${item.toLowerCase()}`}
-                className={`text-black dark:text-zinc-100 transition-all duration-500 ease-in-out hover:opacity-50 border-b-2 border-transparent hover:border-b-green-500 ${FOCUS_RING}`}
+                href={item.href}
+                className={`whitespace-nowrap text-black dark:text-zinc-100 transition-all duration-500 ease-in-out hover:opacity-50 border-b-2 border-transparent hover:border-b-green-500 ${FOCUS_RING}`}
               >
-                {item}
+                {item.label}
               </a>
             </li>
           ))}
@@ -106,15 +115,15 @@ const Navbar = () => {
           </button>
 
           <div className="flex flex-col items-center justify-center gap-10 h-full text-black dark:text-zinc-100">
-            {["About", "Projects", "Contact"].map((item, idx) => (
+            {NAV_ITEMS.map((item, idx) => (
               <a
-                key={item}
+                key={item.label}
                 ref={idx === 0 ? firstLinkRef : null}
-                href={`#${item.toLowerCase()}`}
+                href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`hover:opacity-50 transition-opacity duration-300 ${FOCUS_RING}`}
               >
-                {item}
+                {item.label}
               </a>
             ))}
             <a

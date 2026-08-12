@@ -49,7 +49,7 @@ const Hero = () => {
 
       <div className="relative z-10 w-full px-6 sm:px-12 flex flex-col justify-center items-center gap-8 text-center">
         <h1 className="w-full lg:max-w-6xl font-headings leading-tight md:leading-[1.1] text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl text-black dark:text-zinc-100">
-          I want to{" "}
+          I{" "}
           <span className="relative inline-block align-baseline">
             {/* Invisible widest phrase reserves layout space; prevents reflow on cycle */}
             <span aria-hidden="true" className="invisible whitespace-nowrap">

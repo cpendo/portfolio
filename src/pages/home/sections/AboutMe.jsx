@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import AvatarImage from "../../../assets/avatar.png";
 
 const AboutMe = () => {
@@ -34,7 +36,7 @@ const AboutMe = () => {
             </p>
 
             <p>
-              Systems fascinate me. I want to know how and why things work under
+              Systems fascinate me. I like to know how and why things work under
               the hood.{" "}
               {/* It's a thrill for me to figure out the why behind the
               code, connect the dots between complex data logic and the final
@@ -45,9 +47,16 @@ const AboutMe = () => {
             </p>
 
             <p>
-              I’m currently working on projects that sharpen both my frontend
-              and backend skills. And I’m always looking to grow as a developer
-              and a problem-solver.
+              Right now I'm building Mailt, a headless, multi-tenant
+              email-template manager. I'm designing the API and access model
+              now, with the interface coming next. The write-up on how I{" "}
+              <Link
+                to="/case-studies/untangling-multitenancy"
+                className="text-green-600 dark:text-green-400 underline underline-offset-2 hover:opacity-70"
+              >
+                untangled its multi-tenancy
+              </Link>{" "}
+              is below.
             </p>
 
             <p className="font-black italic">

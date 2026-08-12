@@ -1,0 +1,225 @@
+/* Shared styling for case-study routes.
+ * Lifted from the standalone case-study HTML docs, then:
+ *   - scoped under `.case-study` so these generic class names (.wrap, .muted,
+ *     .hero, .tag, .note, .step…) never leak into the rest of the app;
+ *   - repalletted from maroon-on-paper to the portfolio's green/zinc tokens;
+ *   - given a `.dark .case-study` override set so the global theme toggle works;
+ *   - `--ink` split into a separate always-dark `--panel` (the original overloaded
+ *     one variable for both body text AND the dark diagram-panel background, which
+ *     breaks the moment text has to invert for dark mode).
+ * Mono stays IBM Plex Mono (the app has no mono face). */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+.case-study {
+  --ink: #18181b;        /* zinc-900  — body text + headings */
+  --muted: #52525b;      /* zinc-600 */
+  --faint: #a1a1aa;      /* zinc-400 */
+  --line: #e4e4e7;       /* zinc-200 */
+  --line-soft: #f4f4f5;  /* zinc-100 */
+  --surface: #ffffff;
+  --accent: #16a34a;     /* green-600 — legible as text on light */
+  --accent-soft: #f0fdf4;/* green-50  */
+  --accent-line: #bbf7d0;/* green-200 */
+  --panel: #18181b;      /* always-dark panel bg (sig / rule) */
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --disp: "Calistoga", ui-serif, Georgia, serif;
+  --body: "Lora", ui-serif, Georgia, serif;
+
+  font-family: var(--body);
+  color: var(--ink);
+  line-height: 1.66;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.dark) .case-study {
+  --ink: #f4f4f5;        /* zinc-100 */
+  --muted: #a1a1aa;      /* zinc-400 */
+  --faint: #71717a;      /* zinc-500 */
+  --line: #27272a;       /* zinc-800 */
+  --line-soft: #18181b;  /* zinc-900 */
+  --surface: #18181b;    /* zinc-900 */
+  --accent: #4ade80;     /* green-400 */
+  --accent-soft: #052e16;/* deep green */
+  --accent-line: #166534;/* green-800 */
+  /* --panel stays dark in both modes */
+}
+
+.case-study .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.case-study .col { max-width: 720px; }
+
+.case-study a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-line); }
+.case-study a:hover { border-bottom-color: var(--accent); }
+.case-study :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.case-study .bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--mono); font-size: 12.5px; color: var(--faint); letter-spacing: 0.02em;
+}
+.case-study .bar .id { color: var(--muted); font-weight: 500; }
+.case-study .bar .id b { color: var(--ink); font-weight: 500; }
+
+.case-study .hero { padding: 78px 0 8px; }
+.case-study .kick {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.06em;
+  color: var(--accent); text-transform: uppercase; margin: 0 0 24px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.case-study .kick::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
+.case-study h1 {
+  font-family: var(--disp); font-weight: 700; font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.03; letter-spacing: -0.03em; margin: 0 0 26px; color: var(--ink);
+}
+.case-study h1 em { font-style: normal; color: var(--accent); }
+.case-study .stand { font-size: clamp(18px, 2.4vw, 21px); line-height: 1.5; color: var(--muted); max-width: 660px; font-weight: 400; }
+.case-study .stand strong { color: var(--ink); font-weight: 600; }
+
+.case-study .facts { display: flex; flex-wrap: wrap; gap: 0; margin: 52px 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.case-study .fact { padding: 20px 30px 20px 0; margin-right: 30px; border-right: 1px solid var(--line); }
+.case-study .fact:last-child { border-right: none; margin-right: 0; }
+.case-study .fact .l { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 7px; }
+.case-study .fact .v { font-size: 15.5px; font-weight: 600; color: var(--ink); }
+
+.case-study section { padding: 60px 0; }
+.case-study .tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+.case-study h2 { font-family: var(--disp); font-weight: 600; font-size: clamp(24px, 3.6vw, 33px); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 20px; color: var(--ink); }
+.case-study h3 { font-family: var(--body); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 0 0 8px; color: var(--ink); }
+.case-study p { margin: 0 0 18px; }
+.case-study p.lead { font-size: 19px; color: var(--ink); }
+.case-study .muted { color: var(--muted); }
+.case-study em.i { font-style: italic; }
+.case-study strong { font-weight: 600; }
+.case-study code { font-family: var(--mono); font-size: 0.85em; background: var(--surface); border: 1px solid var(--line); padding: 1px 5px; border-radius: 4px; color: var(--accent); }
+
+.case-study .divider { height: 1px; background: var(--line); border: none; margin: 0; }
+
+.case-study .pull {
+  font-family: var(--disp); font-weight: 500; font-size: clamp(21px, 3vw, 28px);
+  line-height: 1.32; letter-spacing: -0.015em; color: var(--ink);
+  border-left: 2px solid var(--accent); padding: 4px 0 4px 26px; margin: 34px 0; max-width: 720px;
+}
+.case-study .pull span { color: var(--accent); }
+
+/* honest-scope note — neutral callout, adapts to theme via tokens */
+.case-study .note { background: var(--line-soft); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; margin: 26px 0; }
+.case-study .note .nl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.case-study .note p { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.6; }
+.case-study .note p strong { color: var(--ink); }
+
+/* signature panels: always-dark diagram surfaces. Red = anti-pattern,
+   green = the fix — semantic, so these internal colors stay put. */
+.case-study .sig { background: var(--panel); border-radius: 14px; padding: 34px clamp(20px, 4vw, 40px); margin: 10px 0 6px; color: #cdd6de; }
+.case-study .sig .cap { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #7d8b98; margin: 0 0 24px; }
+.case-study .sig-grid { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 10px; align-items: center; }
+.case-study .pane { border-radius: 10px; padding: 20px 20px; font-family: var(--mono); font-size: 12.5px; line-height: 1.85; white-space: pre-wrap; }
+.case-study .pane.bad { background: #23181a; border: 1px solid #4a2b2b; color: #d6a7a2; }
+.case-study .pane.good { background: #14231e; border: 1px solid #24483b; color: #a7d0bd; }
+.case-study .pane.plain { background: #1b2730; border: 1px solid #33414c; color: #b3bdc7; }
+.case-study .pane.plain .h { color: #c3ccd4; }
+.case-study .pane .h { display: block; font-family: var(--body); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+.case-study .pane.bad .h { color: #e88b83; }
+.case-study .pane.good .h { color: #7fd6a0; }
+.case-study .pane .k { color: #f2f5f7; }
+.case-study .sig-arrow { text-align: center; color: #6f7d8a; font-size: 24px; }
+.case-study .sig .foot { margin: 22px 0 0; font-family: var(--body); font-size: 13.5px; color: #8d99a5; line-height: 1.55; }
+.case-study .sig .foot b { color: #cdd6de; font-weight: 500; }
+
+/* evolution timeline */
+.case-study .arc { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 8px 0 4px; }
+.case-study .step { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; position: relative; }
+.case-study .step .when { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 10px; }
+.case-study .step h3 { font-size: 17px; margin-bottom: 8px; }
+.case-study .step p { margin: 0; font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+.case-study .arc-mid { text-align: center; font-family: var(--mono); font-size: 12px; color: var(--faint); margin: 4px 0 18px; letter-spacing: 0.04em; }
+
+.case-study .points { border-top: 1px solid var(--line); margin-top: 8px; }
+.case-study .pt { display: grid; grid-template-columns: 210px 1fr; gap: 26px; padding: 24px 0; border-bottom: 1px solid var(--line-soft); }
+.case-study .pt:last-child { border-bottom: 1px solid var(--line); }
+.case-study .pt .ph h3 { margin: 0 0 5px; font-size: 17px; }
+.case-study .pt .ph .code { font-family: var(--mono); font-size: 11.5px; color: var(--accent); }
+.case-study .pt .pb p { margin: 0; font-size: 15.5px; color: var(--muted); }
+.case-study .pt .pb p + p { margin-top: 9px; }
+.case-study .pt .pb strong { color: var(--ink); }
+.case-study blockquote { margin: 12px 0 0; padding: 12px 0 12px 18px; border-left: 2px solid var(--accent-line); font-family: var(--mono); font-size: 13px; color: var(--ink); line-height: 1.6; }
+
+.case-study .rule { background: var(--panel); color: #e7edf1; border-radius: 14px; padding: clamp(30px, 5vw, 48px); }
+.case-study .rule .tag { color: #7fd6a0; }
+.case-study .rule h2 { color: #fff; }
+.case-study .rule p { color: #b6c1cc; font-size: 17px; }
+.case-study .rule p strong { color: #fff; }
+.case-study .rule .big { font-family: var(--disp); font-weight: 600; font-size: clamp(20px, 2.8vw, 25px); line-height: 1.35; color: #fff; letter-spacing: -0.01em; margin: 0; }
+.case-study .rule .big span { color: #7fd6a0; }
+
+.case-study .role { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px; margin-top: 10px; }
+.case-study .role .r { border-top: 2px solid var(--ink); padding-top: 16px; }
+.case-study .role .r .rl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 9px; }
+.case-study .role .r p { margin: 0; font-size: 15px; color: var(--muted); }
+.case-study .role .r p strong { color: var(--ink); font-weight: 600; }
+
+.case-study footer.doc { border-top: 1px solid var(--line); margin-top: 40px; padding: 30px 0 70px; font-family: var(--mono); font-size: 12.5px; color: var(--faint); line-height: 1.7; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Data-model study: sub-tag, verdict rows, schema/ERD panel, tense grid,
+   decision list, limits callout. Verdict tags get three distinct theme-aware
+   hues (the original leaned on the maroon accent that's now green, which would
+   have collapsed Cut and Kept into the same colour).
+   ───────────────────────────────────────────────────────────────────────── */
+.case-study .tag .n { color: var(--faint); }
+
+.case-study .vrow { display: grid; grid-template-columns: 148px 1fr; gap: 22px; padding: 22px 0; border-top: 1px solid var(--line-soft); align-items: start; }
+.case-study .vrow:first-of-type { border-top: 1px solid var(--line); }
+.case-study .vrow:last-of-type { border-bottom: 1px solid var(--line); }
+.case-study .vtag { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 0; }
+.case-study .vtag.cut { color: #be123c; }      /* removed / subtracted */
+.case-study .vtag.kept { color: #15803d; }     /* held the harder shape */
+.case-study .vtag.stopped { color: #b45309; }  /* caught in review */
+:where(.dark) .case-study .vtag.cut { color: #fb7185; }
+:where(.dark) .case-study .vtag.kept { color: #4ade80; }
+:where(.dark) .case-study .vtag.stopped { color: #fbbf24; }
+.case-study .vrow .body p { margin: 0; font-size: 15.5px; color: var(--muted); line-height: 1.58; }
+.case-study .vrow .body p strong { color: var(--ink); }
+.case-study .vrow .body h3 { font-size: 16.5px; margin-bottom: 7px; }
+
+.case-study .schema { background: var(--panel); border-radius: 14px; padding: 40px clamp(20px, 4vw, 46px); margin: 8px 0 6px; color: #cdd6de; overflow-x: auto; }
+.case-study .schema .cap { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #7d8b98; margin: 0 0 26px; }
+.case-study .erd { font-family: var(--mono); font-size: 13.5px; line-height: 2.05; white-space: pre; margin: 0; color: #aeb9c4; }
+.case-study .erd b { color: #f2f5f7; font-weight: 500; }
+.case-study .erd .rel { color: #6f7d8a; }
+.case-study .erd .der { color: #7fd6a0; }
+
+.case-study .tenses { margin-top: 34px; padding-top: 30px; border-top: 1px solid #2a3742; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.case-study .tenses .t .tl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #7fd6a0; margin-bottom: 8px; }
+.case-study .tenses .t .tn { font-family: var(--body); font-weight: 600; font-size: 15px; color: #f2f5f7; margin-bottom: 6px; }
+.case-study .tenses .t p { margin: 0; font-family: var(--body); font-size: 13px; color: #8d99a5; line-height: 1.5; }
+
+.case-study .dec { border-top: 1px solid var(--line); padding: 26px 0; display: grid; grid-template-columns: 200px 1fr; gap: 28px; }
+.case-study .dec:last-child { border-bottom: 1px solid var(--line); }
+.case-study .dec .d-head h3 { margin-bottom: 6px; }
+.case-study .dec .d-head .code { font-family: var(--mono); font-size: 11.5px; color: var(--accent); letter-spacing: 0.04em; }
+.case-study .dec .d-body p { margin: 0; font-size: 15.5px; color: var(--muted); }
+.case-study .dec .d-body p + p { margin-top: 10px; }
+.case-study .dec .d-body strong { color: var(--ink); }
+
+.case-study .limits { background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 14px; padding: clamp(26px, 4vw, 40px); }
+.case-study .limits h2 { margin-top: 0; }
+.case-study .limits p { color: var(--ink); }
+.case-study .limits p strong { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .case-study { font-size: 16px; }
+  .case-study .wrap { padding: 0 20px; }
+  .case-study .fact { border-right: none; border-bottom: 1px solid var(--line-soft); width: 100%; margin-right: 0; padding: 16px 0; }
+  .case-study .fact:last-child { border-bottom: none; }
+  .case-study .sig-grid { grid-template-columns: 1fr; }
+  .case-study .sig-arrow { transform: rotate(90deg); padding: 4px 0; }
+  .case-study .arc { grid-template-columns: 1fr; }
+  .case-study .pt { grid-template-columns: 1fr; gap: 10px; }
+  .case-study .role { grid-template-columns: 1fr; }
+  .case-study .vrow { grid-template-columns: 1fr; gap: 8px; }
+  .case-study .dec { grid-template-columns: 1fr; gap: 10px; }
+  .case-study .tenses { grid-template-columns: 1fr; gap: 18px; }
+  .case-study .erd { font-size: 12px; line-height: 1.95; }
+}
